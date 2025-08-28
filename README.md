@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Base mainnet](https://img.shields.io/badge/Base-deployed-blue)](https://basescan.org/address/0xBB81C40eFe9BFcae6EE8B81383A88Bb2A4d04D0d)
+[![Celo mainnet](https://img.shields.io/badge/Celo-deployed-gold)](https://celoscan.io/address/0xfe1ee5f62BA11f283FB9678D10aaA196e3EB331f)
+
 # Multichain Counter — Base & Celo (mainnet, Remix)
 
 Ultra-minimal Solidity **Counter** deployed on **Base mainnet** and **Celo mainnet** using **Remix + MetaMask**.  
