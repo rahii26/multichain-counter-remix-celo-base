@@ -7,6 +7,40 @@
 Ultra-minimal Solidity **Counter** deployed on **Base mainnet** and **Celo mainnet** using **Remix + MetaMask**.  
 Verification via **Sourcify** (automatic) or manual **Single file** verification on the explorers.
 
+## Quick usage (ethers v6)
+
+```js
+(async () => {
+  if (!window.ethers) {
+    await new Promise((res, rej) => {
+      const s=document.createElement('script');
+      s.src="https://cdn.jsdelivr.net/npm/ethers@6.12.0/dist/ethers.umd.min.js";
+      s.onload=res; s.onerror=rej; document.head.appendChild(s);
+    });
+  }
+  // Pick the address for the current network:
+  // const COUNTER = "0xBB81C40eFe9BFcae6EE8B81383A88Bb2A4d04D0d"; // Base mainnet
+  const COUNTER = "0xfe1ee5f62BA11f283FB9678D10aaA196e3EB331f";   // Celo mainnet
+
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+  const signer = await provider.getSigner();
+
+  const abi = [
+    "function increment(uint256)",
+    "function value() view returns (uint256)",
+    "event Increment(address indexed by, uint256 newValue)"
+  ];
+
+  const counter = new ethers.Contract(COUNTER, abi, signer);
+  console.log("value =", (await counter.value()).toString());
+  const tx = await counter.increment(1n);
+  console.log("tx:", tx.hash);
+  await tx.wait();
+  console.log("value after =", (await counter.value()).toString());
+})();
+````
+
 ## Contract
 
 ```solidity
