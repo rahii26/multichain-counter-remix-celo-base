@@ -1,0 +1,38 @@
+# Node (si tu ajoutes Hardhat plus tard)
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+# (garde package-lock.json si tu utilises npm)
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Build / artifacts (Hardhat/TypeChain)
+artifacts/
+cache/
+dist/
+out/
+typechain/
+typechain-types/
+
+# Coverage
+coverage/
+coverage.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Divers
+.solhintcache
