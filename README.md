@@ -7,7 +7,7 @@
 Ultra-minimal Solidity **Counter** deployed on **Base mainnet** and **Celo mainnet** using **Remix + MetaMask**.  
 Verification via **Sourcify** (automatic) or manual **Single file** verification on the explorers.
 
-## Contrat
+## Contract
 
 ```solidity
 // SPDX-License-Identifier: MIT
